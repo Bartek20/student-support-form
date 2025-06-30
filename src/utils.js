@@ -1,4 +1,4 @@
-function validateForm({ name, index, email, type, message }) {
+export function validateForm({ name, index, email, type, message }) {
   const errors = {};
 
   if (!name || name.trim().split(" ").length < 2) {
@@ -30,4 +30,7 @@ function validateForm({ name, index, email, type, message }) {
 
   return errors;
 }
-module.exports = { validateForm };
+
+if (typeof window !== 'undefined') {
+  window.formUtils = { validateForm };
+}

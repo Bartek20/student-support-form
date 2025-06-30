@@ -1,4 +1,4 @@
-const { validateForm } = require('../src/utils');
+import { validateForm } from '../utils';
 
 describe('validateForm()', () => {
   it('should return errors for empty fields', () => {
