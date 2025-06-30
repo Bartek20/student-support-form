@@ -31,6 +31,3 @@ export function validateForm({ name, index, email, type, message }) {
   return errors;
 }
 
-if (typeof window !== 'undefined') {
-  window.formUtils = { validateForm };
-}
