@@ -40,3 +40,16 @@ W folderze `public/` utworzono stronę `index.html`, zawierającą formularz kon
 - Email (`email`)
 - Typ zgłoszenia (`select`)
 - Wiadomość (`textarea`)
+
+## Etap 3: Walidacja formularza (Lab 2 – TDD)
+
+W pliku `src/utils.js` zaimplementowano funkcję `validateForm()`, która wykonuje weryfikację danych formularza:
+
+- Pole `name` musi składać się z conajmniej 2 członów
+- Pole `index` musi sie składać z 6-8 cyfr
+- Pole `email` musi mieć poprawny format
+- Pole `type` nie może być puste
+- Pole `message` wymaga min. 10 znaków
+
+**Funkcja zwraca obiekt z błędami, który będzie wykorzystywany w interfejsie użytkownika oraz testach jednostkowych.**
+
