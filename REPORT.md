@@ -151,3 +151,14 @@ Po scaleniu `feature/header-a` do `main`, podczas próby scalania `feature/heade
 
 **Commit rozwiązujący konflikt:**
 [https://github.com/Bartek20/student-support-form/pull/3/commits/caa7d3cfa719c0f228b0343c55f4bc8abf4b9791](https://github.com/Bartek20/student-support-form/pull/3/commits/caa7d3cfa719c0f228b0343c55f4bc8abf4b9791)
+
+## Etap 10: Semantic Versioning (Lab 2)
+
+W projekcie zastosowano wersjonowanie semantyczne (SemVer) z oznaczeniem:
+
+- `0.0.0` – pierwsze wydanie
+- `0.0.1` – poprawa testów jednostkowych (PATCH)
+- `0.1.0` – dodano pole `files` do formularza (MINOR)
+
+**Zmiany udokumentowano w pliku `CHANGELOG.md`.**
+
