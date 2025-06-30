@@ -84,3 +84,39 @@ Do repozytorium dodano plik `.gitignore`.
 
 **Uwaga techniczna #2:**<br>
 Podczas konfigurowania testów z `jest` wystąpił problem z `import/export`, który został rozwiązany przez przejście na składnię CommonJS (`require/module.exports`), zgodnie z domyślnym środowiskiem testowym `jest`.
+
+## Etap 5: Praca na nowym branchu – integracja formularza (Lab 2)
+
+Zgodnie z dobrymi praktykami, do integracji formularza z funkcją walidacji utworzono osobny branch `feature/form-validation`.
+
+**Zakres zmian:**
+- Utworzono `src/main.js`, który reaguje na `submit`
+- Formularz pobiera dane i przekazuje je do funkcji `validateForm`
+
+Po przetestowaniu formularza lokalnie, zmiany zostaną przesłane jako **pull request** do `main`.
+
+## Etap 6: Budowa projektu z użyciem Vite (Lab 3 – Build)
+
+Do projektu dodano bundler Vite, który umożliwia:
+
+- użycie nowoczesnego `import/export` bez błędów
+- gotowość do integracji z GitHub Pages i CI/CD
+
+Projekt uruchamiany lokalnie za pomocą:
+```bash
+npm run dev
+```
+
+## 🔍 Etap 7: Testy jednostkowe z `vitest` (Lab 2+3)
+
+Z uwagi na integrację z Vite, zamiast `jest` użyto natywnego frameworka `vitest`.
+
+- Obsługuje nowoczesne moduły ES
+- Pełna zgodność z Vite (`vite.config.js`)
+- Prosta składnia zgodna z `jest`
+
+Testy walidatora `validateForm()` znajdują się w `src/__tests__/utils.test.js`  
+Można je uruchomić poleceniem:
+```bash
+npm test
+```
