@@ -136,3 +136,18 @@ W ramach integracji formularza z walidacją, utworzono pull request z branchu `f
 
 **Link do PR:**  
 [https://github.com/Bartek20/student-support-form/pull/1](https://github.com/Bartek20/student-support-form/pull/1)
+
+## Etap 9: Rozwiązywanie konfliktów (Lab 2)
+
+W ramach ćwiczeń z rozwiązywania konfliktów, utworzono dwa branche:
+- `feature/header-a`: zmiana nagłówka na „Formularz Wsparcia Studenta | WSB Merito”
+- `feature/header-b`: zmiana nagłówka na „Formularz Wsparcia Studenta - Uniwersytety Merito”
+
+Po scaleniu `feature/header-a` do `main`, podczas próby scalania `feature/header-b` wystąpił konflikt w pliku `index.html`.
+
+**Rozwiązanie:**
+- Konflikt został rozwiązany ręcznie poprzez utworzenie wspólnej wersji nagłówka:
+  > „Kontakt i Wsparcie Studenta - Uniwersytety WSB Merito”
+
+**Commit rozwiązujący konflikt:**
+[https://github.com/Bartek20/student-support-form/pull/3/commits/caa7d3cfa719c0f228b0343c55f4bc8abf4b9791](https://github.com/Bartek20/student-support-form/pull/3/commits/caa7d3cfa719c0f228b0343c55f4bc8abf4b9791)
