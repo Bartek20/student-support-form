@@ -1,4 +1,4 @@
-export function validateForm({ name, index, email, type, message }) {
+export function validateForm({ name, index, email, type, message, files }) {
   const errors = {};
 
   if (!name || name.trim().split(" ").length < 2) {
@@ -26,6 +26,17 @@ export function validateForm({ name, index, email, type, message }) {
 
   if (!message || message.trim().length < 10) {
     errors.message = "Wiadomość musi mieć co najmniej 10 znaków.";
+  }
+
+  for (const file of files || []) {
+    if (file.size > 5 * 1024 * 1024) {
+      errors.files = "Plik nie może być większy niż 5 MB.";
+      break;
+    }
+    if (!["application/pdf", "image/jpeg", "image/png"].includes(file.type)) {
+      errors.files = "Dozwolone są tylko pliki PDF, JPG i PNG.";
+      break;
+    }
   }
 
   return errors;

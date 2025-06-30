@@ -13,6 +13,7 @@ form.addEventListener('submit', function (e) {
     email: form.email.value,
     type: form.type.value,
     message: form.message.value,
+    files: form.attachments.files ? Array.from(form.attachments.files) : []
   };
 
   const errors = validateForm(data);

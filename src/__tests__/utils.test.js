@@ -8,6 +8,7 @@ describe("validateForm()", () => {
       email: "",
       type: "",
       message: "",
+      files: [],
     });
 
     expect(errors).toHaveProperty("name");
@@ -30,6 +31,7 @@ describe("validateForm()", () => {
       email: "niepoprawny-email",
       type: "Problem techniczny",
       message: "To jest poprawna wiadomość",
+      files: [],
     });
 
     expect(errors).toHaveProperty("index");
@@ -43,6 +45,7 @@ describe("validateForm()", () => {
       email: "niepoprawny-email",
       type: "Problem techniczny",
       message: "To jest poprawna wiadomość",
+      files: [],
     });
 
     expect(errors).toHaveProperty("email");
@@ -56,6 +59,7 @@ describe("validateForm()", () => {
       email: "jan.kowalski@gmail.com",
       type: "Problem techniczny",
       message: "To jest poprawna wiadomość",
+      files: [],
     });
 
     expect(errors).toHaveProperty("email");
@@ -69,6 +73,7 @@ describe("validateForm()", () => {
       email: "",
       type: "",
       message: "To jest poprawna wiadomość",
+      files: [],
     });
 
     expect(errors).toHaveProperty("type");
@@ -82,6 +87,7 @@ describe("validateForm()", () => {
       email: "jan.kowalski@gmail.com",
       type: "Problem techniczny",
       message: "To",
+      files: [],
     });
 
     expect(errors).toHaveProperty("message");
@@ -95,8 +101,39 @@ describe("validateForm()", () => {
       email: "jan.kowalski@student.wroclaw.merito.pl",
       type: "Sugestia dot. zajęć",
       message: "To jest poprawna wiadomość o długości powyżej 10 znaków.",
+      files: [],
     });
 
+    expect(errors).toEqual({});
+  });
+
+  it("should validate file type", () => {
+    const validFile = new File(["content"], "valid.pdf", { type: "application/pdf", size: 1024 * 1024 });
+    const invalidFile = new File(["content"], "invalid.txt", { type: "text/plain", size: 6 * 1024 * 1024 });
+
+    const errors = validateForm({
+      name: "Jan Kowalski",
+      index: "123456",
+      email: "admin@merito.pl",
+      type: "Problem techniczny",
+      message: "To jest poprawna wiadomość o długości powyżej 10 znaków.",
+      files: [validFile, invalidFile],
+    });
+    expect(errors).toHaveProperty("files");
+    expect(errors.files).toBe("Dozwolone są tylko pliki PDF, JPG i PNG.");
+  });
+
+  it("should validate file without errors", () => {
+    const validFile = new File(["content"], "valid.pdf", { type: "application/pdf", size: 1024 * 1024 });
+
+    const errors = validateForm({
+      name: "Jan Kowalski",
+      index: "123456",
+      email: "admin@merito.pl",
+      type: "Problem techniczny",
+      message: "To jest poprawna wiadomość o długości powyżej 10 znaków.",
+      files: [validFile],
+    });
     expect(errors).toEqual({});
   });
 });
