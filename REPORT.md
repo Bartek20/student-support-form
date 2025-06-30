@@ -4,7 +4,7 @@
 
 **Tytuł projektu:** Formularz wsparcia studenta<br>
 **Technologie:** Node.js, HTML, CSS, JavaScript<br>
-**Repozytorium:** [https://github.com/Bartek20/student-support-form](#)<br>
+**Repozytorium:** [https://github.com/Bartek20/student-support-form](https://github.com/Bartek20/student-support-form)<br>
 **Deployment:** GitHub Pages<br>
 **Autor:** Bartłomiej Radoń<br>
 **Uczelnia:** Uniwersytet WSB Merito we Wrocławiu<br>
@@ -120,3 +120,19 @@ Można je uruchomić poleceniem:
 ```bash
 npm test
 ```
+
+## Etap 8: Pull Request i Code Review (Lab 2)
+
+W ramach integracji formularza z walidacją, utworzono pull request z branchu `feature/form-validation` do `main`.
+
+**Zakres PR:**
+- Integracja formularza z funkcją `validateForm`
+- Obsługa błędów na froncie
+- Wersja gotowa do budowania i testów
+
+**Review:**
+- Przeprowadzono self-review z komentarzami
+- Zmiany zostały zaakceptowane i scalone do `main`
+
+**Link do PR:**  
+[https://github.com/Bartek20/student-support-form/pull/1](https://github.com/Bartek20/student-support-form/pull/1)
