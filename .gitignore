@@ -1,0 +1,18 @@
+# Node.js
+node_modules/
+.env
+dist/
+coverage/
+.nyc_output/
+.vscode/
+
+# Systemowe
+.DS_Store
+Thumbs.db
+
+# Testy
+jest.config.js
+*.log
+
+# GitHub Pages (jeśli generujemy pliki build)
+docs/

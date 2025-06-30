@@ -1,4 +1,4 @@
-export function validateForm({ name, index, email, type, message }) {
+function validateForm({ name, index, email, type, message }) {
   const errors = {};
 
   if (!name || name.trim().split(" ").length < 2) {
@@ -15,8 +15,8 @@ export function validateForm({ name, index, email, type, message }) {
   }
 
   const allowedDomains = ["wsb.pl", "merito.pl"];
-  const emailDomain = email.split("@")[1];
-  if (!allowedDomains.some((domain) => emailDomain.endsWith(domain))) {
+  const emailDomain = email?.split("@")?.[1];
+  if (!('email' in errors) && !allowedDomains.some((domain) => emailDomain.endsWith(domain))) {
     errors.email = "Adres email musi należeć do domeny uczelnianej.";
   }
 
@@ -30,3 +30,4 @@ export function validateForm({ name, index, email, type, message }) {
 
   return errors;
 }
+module.exports = { validateForm };
