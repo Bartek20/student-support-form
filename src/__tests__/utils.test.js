@@ -15,6 +15,12 @@ describe("validateForm()", () => {
     expect(errors).toHaveProperty("email");
     expect(errors).toHaveProperty("type");
     expect(errors).toHaveProperty("message");
+
+    expect(errors.name).toBe("Imię i nazwisko jest wymagane.");
+    expect(errors.index).toBe("Numer indeksu musi składać się z 6-8 cyfr.");
+    expect(errors.email).toBe("Adres email jest nieprawidłowy.");
+    expect(errors.type).toBe("Musisz wybrać typ zgłoszenia.");
+    expect(errors.message).toBe("Wiadomość musi mieć co najmniej 10 znaków."); 
   });
 
   it("should return an error for invalid index", () => {
@@ -27,6 +33,7 @@ describe("validateForm()", () => {
     });
 
     expect(errors).toHaveProperty("index");
+    expect(errors.index).toBe("Numer indeksu musi składać się z 6-8 cyfr.");
   });
 
   it("should return an error for invalid email", () => {
@@ -39,7 +46,7 @@ describe("validateForm()", () => {
     });
 
     expect(errors).toHaveProperty("email");
-    expect(errors.email).toMatch(/email/i);
+    expect(errors.email).toBe("Adres email jest nieprawidłowy.");
   });
 
   it("should return an error for invalid email domain", () => {
@@ -52,7 +59,7 @@ describe("validateForm()", () => {
     });
 
     expect(errors).toHaveProperty("email");
-    expect(errors.email).toMatch(/email/i);
+    expect(errors.email).toBe("Adres email musi należeć do domeny uczelnianej.");
   });
 
   it("should return an error for empty type", () => {
@@ -65,6 +72,7 @@ describe("validateForm()", () => {
     });
 
     expect(errors).toHaveProperty("type");
+    expect(errors.type).toBe("Musisz wybrać typ zgłoszenia.");
   });
 
   it("should return an error for too short message", () => {
@@ -77,6 +85,7 @@ describe("validateForm()", () => {
     });
 
     expect(errors).toHaveProperty("message");
+    expect(errors.message).toBe("Wiadomość musi mieć co najmniej 10 znaków.");
   });
 
   it("should return no errors for valid data", () => {
