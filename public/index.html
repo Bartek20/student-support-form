@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formularz wsparcia studenta – WSB Merito Wrocław</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header>
+    <img src="assets/merito.png" alt="Logo Uniwersytetu WSB Merito we Wrocławiu" class="logo" />
+    <h1>Formularz Wsparcia Studenta</h1>
+    <p><strong>Uczelnia:</strong> Uniwersytet WSB Merito we Wrocławiu</p>
+  </header>
+
+  <main>
+    <form id="supportForm" novalidate>
+      <label>
+        Imię i nazwisko:
+        <input type="text" name="name" required />
+      </label>
+
+      <label>
+        Numer indeksu:
+        <input type="text" name="index" required />
+      </label>
+
+      <label>
+        Email:
+        <input type="email" name="email" required />
+      </label>
+
+      <label>
+        Typ zgłoszenia:
+        <select name="type" required>
+          <option value="" selected disabled>-- wybierz --</option>
+          <option>Problem techniczny w Extranecie</option>
+          <option>Problem techniczny w platformie Moodle</option>
+          <option>Kontakt z prowadzącym</option>
+          <option>Odwołanie od oceny</option>
+          <option>Sugestia dot. zajęć</option>
+        </select>
+      </label>
+
+      <label>
+        Wiadomość:
+        <textarea name="message" rows="4" required></textarea>
+      </label>
+
+      <button type="submit">Wyślij</button>
+    </form>
+  </main>
+    <footer>
+        <p class="disclaimer">
+            <strong>Uwaga:</strong> Strona ma charakter edukacyjny i nie jest oficjalną formą kontaktu z Uniwersytetem WSB Merito we Wrocławiu.
+        </p>
+    </footer>
+</body>
+</html>
