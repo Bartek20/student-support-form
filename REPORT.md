@@ -181,15 +181,31 @@ Projekt został zintegrowany z systemem CI/CD na GitHubie (Github Actions):
 ### Testy (CI)
 - Skonfigurowano workflow GitHub Actions (`ci.yml`)
 - Testy jednostkowe są uruchamiane automatycznie przy każdym pushu i PR do `main`
+- Dodano testy jakości kodu z wykorzystaniem ESLint
+- Budowanie kodu wykonane w CD
+- Budowanie obrazu Docker (nie dotyczy)
 
 ### Build
 - Projekt budowany za pomocą polecenia `npm run build`
 - Wersja produkcyjna trafia do folderu `dist/`
 
 ### Deployment (CD)
-- Wdrożenie odbywa się poprzez skrypt `gh-pages`
+- Wdrożenie odbywa się poprzez skrypt `gh-pages` (ręcznie)
 ```bash
 npm run deploy
 ```
+- lub poprzez workflow Github Actions (`deploy.yaml`)
 - Strona została opublikowana na GitHub Pages:
   [https://bartek20.github.io/student-support-form/](https://bartek20.github.io/student-support-form/)
+- Health Check po wdrożeniu (nie dotyczy - brak możliwości przez stosowane przez GH Pages cache)
+- Możliwość rollback (nie dotyczy - deploy wykonany jedynie po zaliczeniu testów + brak natywnej możliwości wykonania rollback)
+
+### Konfiguracja środowiska
+- Secrets automatycznie skonfigurowany (`GITHUB_TOKEN`)
+- Zmienne środowiskowe (nie dotyczy)
+- Health endpoint (nie dotyczy)
+
+### Dokumentacja
+- Dodano informacje na temat deploymentu
+- Dodano informacje na temat zastosowanego workflow
+- Konfiguracja środowiska (nie dotyczy - nie wymagana przy GH Actions)
