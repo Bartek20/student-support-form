@@ -3,9 +3,13 @@ import './style.css'
 import { validateForm } from './utils.js';
 
 const form = document.getElementById('supportForm');
+const successMessage = document.getElementById('form-success');
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
+
+  successMessage.hidden = true;
+
 
   const data = {
     name: form.name.value,
@@ -19,17 +23,17 @@ form.addEventListener('submit', function (e) {
   const errors = validateForm(data);
 
   [...form.elements].forEach(el => el.classList.remove('error'));
+  document.querySelectorAll('.form-error').forEach(el => el.textContent = '');
 
   if (Object.keys(errors).length > 0) {
     for (const field in errors) {
       const input = form.elements[field];
-      if (input) {
-        input.classList.add('error');
-      }
+      const errorSpan = document.querySelector(`[data-error-for="${field}"]`);
+      if (input) input.classList.add('error');
+      if (errorSpan) errorSpan.textContent = errors[field];
     }
-    alert('Formularz zawiera błędy!');
   } else {
-    alert('Formularz przeszedł walidację!');
+    successMessage.hidden = false;
     form.reset();
   }
 });
