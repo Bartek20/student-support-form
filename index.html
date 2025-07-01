@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularz wsparcia studenta – WSB Merito Wrocław</title>
+    <script type="module" crossorigin src="/assets/index-BDkIGf0g.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-_v6Ku_Tn.css">
+  </head>
+  <body>
+    <header>
+      <img
+        src="assets/merito.png"
+        alt="Logo Uniwersytetu WSB Merito we Wrocławiu"
+        class="logo"
+      />
+      <h1>Formularz Wsparcia Studenta - Uniwersytety WSB Merito</h1>
+      <p><strong>Uczelnia:</strong> Uniwersytet WSB Merito we Wrocławiu</p>
+    </header>
+
+    <main>
+      <form id="supportForm" novalidate>
+        <label>
+          Imię i nazwisko:
+          <input type="text" name="name" required />
+          <span class="form-error" data-error-for="name"></span>
+        </label>
+
+        <label>
+          Numer indeksu:
+          <input type="text" name="index" required />
+          <span class="form-error" data-error-for="index"></span>
+        </label>
+
+        <label>
+          Email:
+          <input type="email" name="email" required />
+          <span class="form-error" data-error-for="email"></span>
+        </label>
+
+        <label>
+          Typ zgłoszenia:
+          <select name="type" required>
+            <option value="" selected disabled>-- wybierz --</option>
+            <option>Problem techniczny w Extranecie</option>
+            <option>Problem techniczny w platformie Moodle</option>
+            <option>Kontakt z prowadzącym</option>
+            <option>Odwołanie od oceny</option>
+            <option>Sugestia dot. zajęć</option>
+          </select>
+          <span class="form-error" data-error-for="type"></span>
+        </label>
+
+        <label>
+          Wiadomość:
+          <textarea name="message" rows="4" required></textarea>
+          <span class="form-error" data-error-for="message"></span>
+        </label>
+
+        <label>
+          Załączniki (opcjonalnie):
+          <input type="file" name="attachments" accept=".pdf,.jpg,.png" multiple />
+          <span class="form-error" data-error-for="file"></span>
+        </label>
+
+        <div id="form-success" class="form-success" hidden>Formularz został poprawnie przesłany!</div>
+
+        <button type="submit">Wyślij</button>
+      </form>
+    </main>
+    <footer>
+      <p class="disclaimer">
+        <strong>Uwaga:</strong> Strona ma charakter edukacyjny i nie jest
+        oficjalną formą kontaktu z Uniwersytetem WSB Merito we Wrocławiu.
+      </p>
+    </footer>
+  </body>
+</html>
