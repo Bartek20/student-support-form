@@ -209,3 +209,15 @@ npm run deploy
 - Dodano informacje na temat deploymentu
 - Dodano informacje na temat zastosowanego workflow
 - Konfiguracja środowiska (nie dotyczy - nie wymagana przy GH Actions)
+
+## Etap 13: Zadania dodatkowe (Lab 3)
+
+### Multi-environment deployment
+Za multi-environment deployment odpowiada Cloudflare Pages, które przy domyślnych ustawieniach wykonuje `preview` deployment dla każdego commitu dla każdego branchu nie będącego produkcyjnym (`main`).<br>Wszystkie commity są dostępne pod adresem strony z odpowiednim hashem commitu jako subdomena.
+
+### Advanced monitoring
+Nie dotyczy - jedyny możliwy monitoring to czy strona jest dostępna, a za to odpowiada GH Pages
+
+### Milti-platform deployment
+Dodano deployment do Cloudflare Pages<br>
+Projekt jest dostępny tutaj: [https://student-support-form.pages.dev/](https://student-support-form.pages.dev/)
