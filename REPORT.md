@@ -221,3 +221,11 @@ Nie dotyczy - jedyny możliwy monitoring to czy strona jest dostępna, a za to o
 ### Milti-platform deployment
 Dodano deployment do Cloudflare Pages<br>
 Projekt jest dostępny tutaj: [https://student-support-form.pages.dev/](https://student-support-form.pages.dev/)
+
+#### Porównanie platform
+|                     | **GitHub Pages**           | **Cloudflare Pages**        |
+|---------------------|----------------------------|-----------------------------|
+| **Łatwość konfiguracji** | Automatyczna integracja, wymagane jedynie przygotowanie workflow / aktywacja z poziomu ustawień | Wymagane połączenie konta Github z Cloudflare i utworzenie projektu lub ręczne wrzucenie gotowych plików |
+| **Koszty**              | Całkowicie darmowe (tylko publiczne repo) | Całkowicie darmowe (dla statycznych stron) |
+| **Performance**         | Wydajne, ale bez globalnego CDN, cache może opóźnić wdrożenie zmian | Szybki globalny CDN (Edge Network), cache czyszczony po deploymencie |
+| **Zarządzanie**         | Zintegrowane z GitHub, proste | Osobny panel, ale wystarczy raz skonfigurować projekt |
