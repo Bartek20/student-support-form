@@ -81,6 +81,23 @@ select.error {
   border-color: red;
 }
 
+.form-error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.form-success {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #dff0d8;
+  border: 1px solid #3c763d;
+  color: #3c763d;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
 button {
   margin-top: 1rem;
   padding: 0.75rem;
