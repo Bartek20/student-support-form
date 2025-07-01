@@ -218,7 +218,7 @@ Za multi-environment deployment odpowiada Cloudflare Pages, które przy domyśln
 ### Advanced monitoring
 Nie dotyczy - jedyny możliwy monitoring to czy strona jest dostępna, a za to odpowiada GH Pages
 
-### Milti-platform deployment
+### Multi-platform deployment
 Dodano deployment do Cloudflare Pages<br>
 Projekt jest dostępny tutaj: [https://student-support-form.pages.dev/](https://student-support-form.pages.dev/)
 
