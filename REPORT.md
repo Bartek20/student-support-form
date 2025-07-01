@@ -162,3 +162,15 @@ W projekcie zastosowano wersjonowanie semantyczne (SemVer) z oznaczeniem:
 
 **Zmiany udokumentowano w pliku `CHANGELOG.md`.**
 
+## Etap 11: Rozszerzenie funkcjonalności i workflow (Lab 2)
+
+W ramach ćwiczeń z pełnego workflow:
+- utworzono gałąź `feature/styling`
+- dodano nowy plik `style.css` zawierający podstawową stylizację formularza
+- zamiast `alert()` formularz wyświetla błędy pod każdym polem
+- dodano komunikat sukcesu `Formularz został poprawnie przesłany!` widoczny pod formularzem, komunikat pokazuje się tylko po przejściu walidacji
+- wcześniej stosowany `alert()` został usunięty na rzecz walidacji w formularzu
+- zmiany zostały przesłane jako pull request z opisem zmian
+- wykonano self-review i zatwierdzono merge
+- utworzono tag `v1.0.0`
+
