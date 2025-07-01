@@ -174,3 +174,22 @@ W ramach ćwiczeń z pełnego workflow:
 - wykonano self-review i zatwierdzono merge
 - utworzono tag `v1.0.0`
 
+## Etap 12: CI/CD i wdrożenie (Lab 3)
+
+Projekt został zintegrowany z systemem CI/CD na GitHubie (Github Actions):
+
+### Testy (CI)
+- Skonfigurowano workflow GitHub Actions (`ci.yml`)
+- Testy jednostkowe są uruchamiane automatycznie przy każdym pushu i PR do `main`
+
+### Build
+- Projekt budowany za pomocą polecenia `npm run build`
+- Wersja produkcyjna trafia do folderu `dist/`
+
+### Deployment (CD)
+- Wdrożenie odbywa się poprzez skrypt `gh-pages`
+```bash
+npm run deploy
+```
+- Strona została opublikowana na GitHub Pages:
+  [https://bartek20.github.io/student-support-form/](https://bartek20.github.io/student-support-form/)
